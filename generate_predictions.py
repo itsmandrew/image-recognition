@@ -50,7 +50,7 @@ def generate_prediction(img_data_path):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # Normalize the image
     ])
 
-    model_path = 'best_model.8280.pt'
+    model_path = 'best_model_0.8657.pt'
 
     device = torch.device("mps" if torch.cuda.is_available() else "cpu")
     # Load the model
@@ -81,7 +81,8 @@ def generate_prediction(img_data_path):
     print('Predicted class:', map[predicted_class])
 
 def main():
-    img_file = 'dataset_type_of_plants_new/kale/kale12.jpg'
+    # change this line to test (enter correct img file path)
+    img_file = ''
     generate_prediction(img_file)
 
 if __name__ == '__main__':
